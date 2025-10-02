@@ -1,3 +1,7 @@
+// @author - el
+// DISCLAIMER !
+// Kode ini hanyalah implementasi konsep dasar 
+
 public class main {
     public static void matrixAndTranspose(String[] args){
         Scanner sc = new Scanner(System.in);
