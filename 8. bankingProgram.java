@@ -1,3 +1,7 @@
+// @author - el
+// DISCLAIMER !
+// Kode ini hanyalah implementasi konsep dasar 
+
 import java.util.Scanner;
 
 public class bankingProgram {
