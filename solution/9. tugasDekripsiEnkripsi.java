@@ -1,3 +1,7 @@
+// @author - el
+// DISCLAIMER !
+// Kode ini hanyalah implementasi konsep dasar (belum clean) dari tugas
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
