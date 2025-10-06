@@ -59,6 +59,7 @@ public class tugasArrhitungStockTerkecil {
 
             if (uangBayar < totalHarga) {
                 System.out.println("Uang tidak cukup! Kurang: Rp " + (totalHarga - uangBayar));
+                    return;
             } else {
                 int kembalian = uangBayar - totalHarga;
                 System.out.println("Kembalian: Rp " + kembalian);
