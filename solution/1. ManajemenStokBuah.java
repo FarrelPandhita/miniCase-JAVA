@@ -6,55 +6,72 @@
         1. Melihat daftar nama buah, stok, harga
         2. Merubah stok
         3. Melihat stok terkecil ada pada buah apa
+        4. hitung kembalian
 
  */
-import java.util.Arrays;
+
 import java.util.Scanner;
 
-public class ManajemenStokBuah {
+public class tugasArrhitungStockTerkecil {
         public static void main(String[] args){
             Scanner input = new Scanner(System.in);
 
-            String belanja="";
+            String belanja ="";
             int[] stocks ={4,6,8};
+            int [] harga= {4000,60000,8000};
             String[] buah = {"Apel","Semangka","Pisang"};
 
-            System.out.println("Menu Buah: ");
-            for(int i = 0; i<stocks.length; i++){
-                System.out.println((i+1)+". "+ buah[i] +" dengan stock: "+ stocks[i]);
+            System.out.println("\n╔════════════════════════════════════════════════════╗");
+            System.out.println("║                   MENU BUAH TOKO                   ║");
+            System.out.println("╠════════════════════════════════════════════════════╣");
+            for (int i = 0; i < buah.length; i++) {
+                System.out.printf("║ %d. %-15s Stock: %-5d Harga: Rp %-8d ║\n",
+                        (i + 1), buah[i], stocks[i], harga[i]);
             }
-            System.out.print("Buah apa yang ingin anda beli: " );
+            System.out.println("╚════════════════════════════════════════════════════╝");
+            System.out.print("\nBuah apa yang ingin anda beli (1-" +buah.length+") :" );
             int choice = input.nextInt();
+
             if(choice<=0 || choice>stocks.length){
                 System.out.println("Invalid choice!");
                 return;
             }
+            int indexChoice = choice - 1;
             System.out.print("Masukkan jumlah beli: ");
-            int n = input.nextInt();
-            if(n > stocks[choice-1]){
-                System.out.println("Barang sudah habis! /stock tidak cukup ");
-//                System.out.println("Stock awal: "+ Arrays.toString(stocks));
+            int jumlahBeli = input.nextInt();
+            if(jumlahBeli > stocks[choice-1] || jumlahBeli<=0){
+                System.out.println("stock tidak cukup ");
                 return;
             }
             System.out.println();
-            switch(choice){
-                case 1:
-                    belanja = buah[0];
-                    stocks[0] -= n;
-                    break;
-                case 2:
-                    belanja = buah[1];
-                    stocks[1] -= n;
-                    break;
-                case 3:
-                    belanja = buah[2];
-                    stocks[2] -= n;
-                    break;
+
+            int totalHarga = harga[indexChoice] * jumlahBeli;
+            stocks[indexChoice] -= jumlahBeli;
+
+            System.out.println("\n=== INFO PEMBELIAN ===");
+            System.out.println("Belanja: " + buah[indexChoice]);
+            System.out.println("Jumlah: " + jumlahBeli);
+            System.out.println("Total Harga: Rp " + totalHarga);
+            System.out.println("Sisa stock: " + stocks[indexChoice]);
+
+            System.out.print("\nMasukkan jumlah uang: Rp ");
+            int uangBayar = input.nextInt();
+
+            if (uangBayar < totalHarga) {
+                System.out.println("Uang tidak cukup! Kurang: Rp " + (totalHarga - uangBayar));
+            } else {
+                int kembalian = uangBayar - totalHarga;
+                System.out.println("Kembalian: Rp " + kembalian);
             }
 
-            System.out.println("belanja : " + belanja + " Beli: " + n +" Sisa stock: "+ stocks[choice-1]);
-            System.out.println();
-            System.out.println("Updated stock: " );
+            System.out.println("\n╔════════════════════════════════════════════════════╗");
+            System.out.println("║                     UPDATED STOCK                  ║");
+            System.out.println("╠════════════════════════════════════════════════════╣");
+            for (int i = 0; i < buah.length; i++) {
+                System.out.printf("║ %d. %-15s Stock: %-5d Harga: Rp %-8d ║\n",
+                        (i + 1), buah[i], stocks[i], harga[i]);
+            }
+            System.out.println("╚════════════════════════════════════════════════════╝");
 
             int minStock = stocks[0];
             int minIndex = 0;
@@ -64,11 +81,9 @@ public class ManajemenStokBuah {
                     minIndex = i;
                 }
             }
-            for(int i = 0; i<stocks.length; i++){
-                System.out.println((i+1)+". "+ buah[i] +" dengan stock: "+ stocks[i]);
-            }
 
-            System.out.println("Stock buah terendah adalah buah: " + buah[minIndex]);
+            System.out.println("\n=== STOCK TERENDAH ===");
+            System.out.println("Stock buah terendah saat ini  adalah buah: " + buah[minIndex]);
 
         }
     }
