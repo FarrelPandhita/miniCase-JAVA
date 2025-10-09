@@ -56,6 +56,7 @@ public class programKalkulasiSederhana {
                     System.out.println("Nilai rata ratanya adalah: "+ avg);
                     break;
                 case 4:
+                    sum2=0
                     for(int isiData: data){
                         sum2+= isiData;
                     }
