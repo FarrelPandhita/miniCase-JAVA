@@ -4,7 +4,7 @@ public class TiketKeretaApi {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // Data kereta api dalam array 2D
+
         String[][] dataKereta = {
             {"Ekonomi", "50000", "2", "Tidak Ada", "Tidak Ada"},
             {"Bisnis", "100000", "5", "Ada", "Tidak Ada"},
@@ -12,7 +12,6 @@ public class TiketKeretaApi {
             {"Pariwisata", "300000", "10", "Ada", "Ada"}
         };
 
-        // Array untuk menyimpan jumlah tiket yang dipesan untuk setiap jenis
         int[] jumlahTiket = new int[4]; // index 0-3 untuk 4 jenis kereta
         boolean sudahPesan = false;
 
@@ -33,7 +32,7 @@ public class TiketKeretaApi {
             System.out.print("Masukkan pilihan: ");
             pilihan = input.nextInt();
 
-            // Proses berdasarkan pilihan menggunakan switch case
+
             switch (pilihan) {
                 case 1:
                     // Lihat Daftar Kereta
