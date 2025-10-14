@@ -108,7 +108,8 @@ public class casebase2 {
 
             // Kalkulasi harga total
             double hargaTotal = hargaSubtotal - totalDiskon - promoJumat + biayaBungkus;
-            double pajak = hargaTotal * 0.1;
+//            double pajak = hargaTotal * 0.1;
+            double pajak = hitungPajak(hargaTotal);
             double totalPembayaran = hargaTotal + pajak;
 
             // === STRUK PEMBAYARAN ===
@@ -155,6 +156,9 @@ public class casebase2 {
             System.out.println("         Terima Kasih Atas Kunjungan Anda!        ");
             System.out.println("================================================");
 
+        }
+        static double hitungPajak(double hargaTotal){
+            return hargaTotal * 0.1;
         }
 
 }
