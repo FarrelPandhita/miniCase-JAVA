@@ -1,4 +1,4 @@
-// author @ell
+// author - @ell
 
 import java.util.ArrayList;
 import java.util.Scanner;
