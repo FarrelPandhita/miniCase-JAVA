@@ -1,0 +1,95 @@
+Program ini adalah aplikasi Java yang memproses daftar nama lengkap dari user. Program akan membaca sejumlah nama yang ditentukan, kemudian melakukan pemrosesan string untuk menghasilkan inisial dari setiap nama dengan mengambil huruf pertama dari setiap kata dan mengubahnya menjadi huruf kapital.
+
+Selanjutnya, program akan mencari dan menampilkan nama-nama yang dimulai dengan huruf tertentu yang diinputkan user, dengan format nama yang sudah dinormalisasi. Program juga menghitung total jumlah huruf dari semua nama tanpa menghitung spasi.
+
+Dalam prosesnya, program menangani input dengan validasi untuk menghilangkan spasi berlebih dan melakukan pencarian berdasarkan huruf yang diberikan.
+
+CONSTRAINTS
+int jumlahNama → Menyimpan jumlah nama yang akan diproses
+String[] nama → Array untuk menyimpan daftar nama lengkap
+int totalHuruf → Counter untuk menghitung total huruf
+String[] bagian → Array sementara untuk menyimpan bagian-bagian nama
+String inisial → String untuk menyimpan inisial nama
+String awalan → Huruf awalan yang dicari user
+StringBuilder namaProper → Builder untuk membuat format nama yang proper
+String namaFinal → Hasil akhir nama yang sudah dinormalisasi
+*Notes: seluruh nama variable bisa disesuaikan
+
+Aturan
+Pencarian awalan huruf tidak membedakan huruf besar/kecil
+Setiap kata dalam nama diubah menjadi format dengan huruf pertama kapital
+Spasi berlebih dihilangkan 
+Bila nama tidak ditemukan (Tidak ada nama yang berawalan '[inisial]')
+Input Format
+Baris pertama: integer jumlah (jumlah nama)
+Baris kedua - jumlah nama: String nama (nama)
+Baris terakhir: String/Char inisial (inisial yang dicari)
+
+Output Format
+Masukkan (Jumlah nama) nama lengkap:
+Nama ke-1: Ini Hanya
+Nama ke-2: Cuma
+Nama ke-n: Contoh
+
+Inisial dari setiap nama:
+Ini Hanya -> I.H.
+dst.
+
+Nama yang berawalan huruf '(ini inisial)':
+Ini Hanya Contoh
+
+Total huruf (tanpa spasi): Jumlah karakter
+
+Contoh 1
+Input
+3
+BahLIL LahAdila
+Asep KKusnandar
+sahrONI maKKaroni
+s
+
+Output
+Masukkan 3 nama lengkap:
+Nama ke-1: 
+Nama ke-2: 
+Nama ke-3: 
+
+Inisial dari setiap nama:
+BahLIL LahAdila -> B.L.
+Asep KKusnandar -> A.K.
+sahrONI maKKaroni -> S.M.
+
+Nama yang berawalan huruf 'S':
+Sahroni Makkaroni
+
+Total huruf (tanpa spasi): 44
+
+Contoh 2
+Input
+5
+DandY KuwSWAnto
+erPan musANG
+mUlyono  AspuNTara
+DaNIe LianGl 
+IYasTo T
+g
+
+Output
+Masukkan 5 nama lengkap:
+Nama ke-1: 
+Nama ke-2: 
+Nama ke-3: 
+Nama ke-4: 
+Nama ke-5: 
+
+Inisial dari setiap nama:
+DandY KuwSWAnto -> D.K.
+erPan musANG -> E.M.
+mUlyono  AspuNTara -> M.A.
+DaNIe LianGl  -> D.L.
+IYasTo T -> I.T.
+
+Nama yang berawalan huruf 'G':
+Tidak ada nama yang berawalan 'G'
+
+Total huruf (tanpa spasi): 59
